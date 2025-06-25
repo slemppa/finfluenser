@@ -61,17 +61,24 @@ body, #root, .app-container, .hero {
 }
 
 .navbar {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 3rem;
   border-bottom: 1px solid #eee;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
+  min-width: 0;
+  min-height: 72px;
+  box-sizing: border-box;
+  background: #fff;
+  flex-shrink: 0;
 }
 
-.navbar-left {
+.navbar-left, .navbar-right {
   display: flex;
   align-items: center;
+  min-width: 0;
 }
 
 .favicon {
@@ -87,15 +94,10 @@ body, #root, .app-container, .hero {
 }
 
 .navbar-right a {
-  margin-left: 1.5rem;
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.navbar-right a:hover {
-  color: #646cff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 120px;
 }
 
 .hero {
@@ -150,16 +152,33 @@ body, #root, .app-container, .hero {
 }
 
 .sidebar {
-  width: 220px;
-  min-width: 180px;
+  width: 320px;
+  min-width: 260px;
   background: #f5f6fa;
   border-right: 1px solid #e0e0e0;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 0 1rem;
   box-sizing: border-box;
+  position: relative;
+}
+
+.sidebar-content {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar .cta {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: auto;
+  margin-bottom: 10px;
 }
 
 .sidebar-content h3 {
@@ -192,20 +211,6 @@ body, #root, .app-container, .hero {
   color: #646cff;
 }
 
-.generointi-content {
-  margin: 2rem auto;
-  max-width: 600px;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(100, 108, 255, 0.08);
-  padding: 2rem;
-  min-height: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 .mode-btn, .ratio-btn, .option-btn {
   background: #f5f6fa;
   color: #333;
@@ -226,4 +231,41 @@ body, #root, .app-container, .hero {
   background: #e6e8ff;
   color: #646cff;
   border: 1px solid #bfc2ff;
+}
+
+/* Moodi ja dropdown vierekkäin */
+.sidebar-content .moodi-row {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: 100%;
+  margin: 2rem 0 1.5rem 0;
+}
+.sidebar-content .moodi-row > * {
+  flex: 1;
+}
+
+html, body, #root, .app-container {
+  width: 100vw;
+  height: 100vh;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.generointi-content {
+  margin: 2rem auto;
+  max-width: 600px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(100, 108, 255, 0.08);
+  padding: 2rem;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
