@@ -269,3 +269,156 @@ html, body, #root, .app-container {
   align-items: center;
   justify-content: center;
 }
+
+/* --- MOBIILIRESPONSIIVISUUS --- */
+@media (max-width: 900px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+  .brand {
+    font-size: 1.1rem;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    height: auto;
+    min-height: 40vh;
+    padding: 1rem 0;
+  }
+  .hero-text {
+    grid-column: 1 / 2;
+    text-align: center;
+    padding: 0 1rem;
+  }
+  .hero-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem 1rem 1rem;
+  }
+  .hero-image img {
+    max-width: 220px;
+    height: auto;
+  }
+  .sidebar {
+    width: 200px;
+    min-width: 120px;
+    padding: 1rem 0.5rem 0 0.5rem;
+  }
+  .generointi-content {
+    max-width: 98vw;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 56px;
+    padding: 0.5rem 0.5rem;
+  }
+  .navbar-left, .navbar-right {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+  .favicon {
+    width: 28px;
+    height: 28px;
+    margin-right: 0.5rem;
+  }
+  .brand {
+    font-size: 1rem;
+  }
+  .navbar-right a {
+    font-size: 0.95rem;
+    max-width: 80px;
+    padding: 0 0.2rem;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    min-height: 20vh;
+    height: auto;
+    padding: 0.5rem 0;
+  }
+  .hero-text h1 {
+    font-size: 1.5rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
+  }
+  .cta {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.6rem 0;
+  }
+  .sidebar {
+    width: 100vw;
+    min-width: 0;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 0.2rem 0.5rem 0.2rem;
+    position: static;
+  }
+  .sidebar-content {
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100vw;
+    min-height: 0;
+    padding-bottom: 0.5rem;
+    gap: 0.5rem;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .sidebar-content h3 {
+    display: none;
+  }
+  .sidebar-content .moodi-row {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0.5rem 0 0.5rem 0;
+  }
+  .sidebar-content select, .sidebar-content button:not(.cta) {
+    font-size: 1rem;
+    padding: 0.5rem 0.5rem;
+    width: 100%;
+    min-width: 0;
+    max-width: 300px;
+    margin: 0.2rem auto;
+    display: block;
+  }
+  .sidebar .cta {
+    max-width: 200px;
+    margin: 1rem auto 0.5rem auto;
+    display: block;
+  }
+  .generointi-content {
+    max-width: 100vw;
+    padding: 0.5rem;
+    margin: 0.5rem auto;
+    min-height: 120px;
+  }
+  .generointi-content > div[style*='display: grid'] {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    padding: 0.2rem !important;
+    justify-items: center !important;
+  }
+  .generointi-content > div > div {
+    max-width: 98vw !important;
+    width: 100% !important;
+    padding: 0.5rem !important;
+    margin: 0 auto !important;
+  }
+  textarea {
+    font-size: 1rem !important;
+    padding: 0.5rem !important;
+    min-height: 60px !important;
+  }
+}
